@@ -10,22 +10,37 @@ def menu():
 
 
 def add():
-    t = input('Insira um novo intem')
+    t = input('Insira um novo intem ')
     n.append(t)
-    print(f'a tarefa {t} foi inserida com sucesso')
+    print(f'a tarefa {t} foi inserida com sucesso ')
 
 
 def undo():
-    t = input('Qual tarefa deseja Remover')
+    t = input('Qual tarefa deseja Remover ')
     if t in n:
         n.remove(t)
-        print(f'A tarefa {t} foi removida com sucesso')
+        print(f'A tarefa {t} foi removida com sucesso ')
     else:
-        print('nenhuma tarefa encotrada')
+        print('nenhuma tarefa encotrada ')
 def display():
-    if not n
-        print('a lista esta vazia')
+    if not n:
+        print('a lista esta vazia ')
     else:
         print('Lista de Tarefas')
-        for t in n
+        for t in n:
             print(t)
+while True:
+    menu()
+    op = input('Escolha uma Opcao 1 2 3 ou 4 ')
+
+    if op == '1':
+        add()
+    elif op == '2':
+        undo()
+    elif op == '3':
+        display()
+    elif op == '4':
+        print('Saindo...')
+        break
+    else:
+        print('a opcao escolhida e ivalida ou inesxitente ')
