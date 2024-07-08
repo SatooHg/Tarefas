@@ -13,3 +13,12 @@ def add():
     t = input('Insira um novo intem')
     n.append(t)
     print(f'a tarefa {t} foi inserida com sucesso')
+
+
+def undo():
+    t =input('Qual tarefa deseja Remover')
+    if t in n:
+        n.remove(t)
+        print(f'A tarefa {t} foi removida com sucesso')
+    else:
+        print('nenhuma tarefa encotrada')
