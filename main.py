@@ -1,6 +1,9 @@
 n = list()
 
 
+def pergunta(text):
+    return input(text)
+
 def menu():
     print('Menu:')
     print('1 Adicionar uma Tarefa')
@@ -10,14 +13,14 @@ def menu():
 
 
 def add():
-    t = input('Insira um novo item')
+    t = pergunta('Insira um novo item')
 
     n.append(t)
     print(f'a tarefa {t} foi inserida com sucesso')
 
 
 def undo():
-    t = input('Qual tarefa deseja Remover')
+    t = pergunta('Qual tarefa deseja Remover')
     if t in n:
         n.remove(t)
         print(f'A tarefa {t} foi removida com sucesso')
@@ -32,7 +35,7 @@ def display():
             print(t)
 while True:
     menu()
-    op = input('Escolha uma Opcao 1 2 3 ou 4 ')
+    op = pergunta('Escolha uma Opcao 1 2 3 ou 4 ')
 
     if op == '1':
         add()
