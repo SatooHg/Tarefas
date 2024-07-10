@@ -21,16 +21,20 @@ def add():
     print(f'a tarefa {tarefa} foi inserida com sucesso')
     contador += 1
 
+
 def undo():
     print(' ')
-    tarefa = input('Qual tarefa deseja Remover ')
-    if tarefa in lista_de_tarefas:
-        lista_de_tarefas.remove(tarefa)
-        print(' ')
-        print(f'A tarefa {tarefa} foi removida com sucesso')
-    else:
-        print(' ')
-        print('nenhuma tarefa encotrada')
+    numero_da_tarefa = int(input('Qual tarefa deseja Remover '))
+    for tarefa in lista_de_tarefas:
+        if tarefa[0] == numero_da_tarefa:
+            lista_de_tarefas.remove(tarefa)
+            print(' ')
+            print(f'A tarefa {tarefa} foi removida com sucesso')
+        else:
+            print(' ')
+            print('nenhuma tarefa encotrada')
+
+
 def display():
     if not lista_de_tarefas:
         print(' ')
@@ -40,6 +44,8 @@ def display():
         print('Lista de Tarefas')
         for tarefa in lista_de_tarefas:
             print(tarefa)
+
+
 while True:
     menu()
     op = input('Escolha uma Opcao 1 2 3 ou 4 ')
