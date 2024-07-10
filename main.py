@@ -2,6 +2,7 @@ lista_de_tarefas = list()
 
 
 def menu():
+    print('------------------------')
     print('Menu:')
     print('1 Adicionar uma Tarefa')
     print('2 Remover uma Tarafa')
@@ -10,23 +11,30 @@ def menu():
 
 
 def add():
-    tarefa = input('Insira um novo item')
+    print(' ')
+    tarefa = input('Insira um novo item ')
 
     lista_de_tarefas.append(tarefa)
+    print(' ')
     print(f'a tarefa {tarefa} foi inserida com sucesso')
 
 
 def undo():
-    tarefa = input('Qual tarefa deseja Remover')
+    print(' ')
+    tarefa = input('Qual tarefa deseja Remover ')
     if tarefa in lista_de_tarefas:
         lista_de_tarefas.remove(tarefa)
+        print(' ')
         print(f'A tarefa {tarefa} foi removida com sucesso')
     else:
+        print(' ')
         print('nenhuma tarefa encotrada')
 def display():
     if not lista_de_tarefas:
+        print(' ')
         print('a lista esta vazia')
     else:
+        print(' ')
         print('Lista de Tarefas')
         for tarefa in lista_de_tarefas:
             print(tarefa)
