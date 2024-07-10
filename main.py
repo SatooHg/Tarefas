@@ -1,4 +1,4 @@
-n = list()
+lista_de_tarefas = list()
 
 
 def menu():
@@ -10,26 +10,26 @@ def menu():
 
 
 def add():
-    t = input('Insira um novo item')
+    tarefa = input('Insira um novo item')
 
-    n.append(t)
-    print(f'a tarefa {t} foi inserida com sucesso')
+    lista_de_tarefas.append(tarefa)
+    print(f'a tarefa {tarefa} foi inserida com sucesso')
 
 
 def undo():
-    t = input('Qual tarefa deseja Remover')
-    if t in n:
-        n.remove(t)
-        print(f'A tarefa {t} foi removida com sucesso')
+    tarefa = input('Qual tarefa deseja Remover')
+    if tarefa in lista_de_tarefas:
+        lista_de_tarefas.remove(tarefa)
+        print(f'A tarefa {tarefa} foi removida com sucesso')
     else:
         print('nenhuma tarefa encotrada')
 def display():
-    if not n:
+    if not lista_de_tarefas:
         print('a lista esta vazia')
     else:
         print('Lista de Tarefas')
-        for t in n:
-            print(t)
+        for tarefa in lista_de_tarefas:
+            print(tarefa)
 while True:
     menu()
     op = input('Escolha uma Opcao 1 2 3 ou 4 ')
