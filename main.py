@@ -1,5 +1,4 @@
-lista_de_tarefas = list()
-contador = 1
+lista_de_tarefas = []
 
 
 def menu():
@@ -12,14 +11,12 @@ def menu():
 
 
 def add():
-    global contador
     print(' ')
     tarefa = input('Insira um novo item ')
 
-    lista_de_tarefas.append((contador, tarefa))
+    lista_de_tarefas.append(tarefa)
     print(' ')
     print(f'a tarefa {tarefa} foi inserida com sucesso')
-    contador += 1
 
 
 def undo():
@@ -42,8 +39,8 @@ def display():
     else:
         print(' ')
         print('Lista de Tarefas')
-        for tarefa in lista_de_tarefas:
-            print(tarefa)
+        for idx, tarefa in enumerate(lista_de_tarefas, start=1):
+            print(f'{idx}. {tarefa}')
 
 
 while True:
