@@ -22,6 +22,18 @@ def add():
 def undo():
     print(' ')
     if not lista_de_tarefas:
+        print('lista vazia')
+        return
+
+    numero_da_tarefa = int(input('inisira o numero da tarefa que deseja remover '))
+
+    if numero_da_tarefa <= 0 or numero_da_tarefa > len(lista_de_tarefas):
+        print('numero insirido e invalido')
+        return
+
+    removedor_de_tarefas = lista_de_tarefas.pop(numero_da_tarefa - 1)
+    print(' ')
+    print(f'a tarefa {removedor_de_tarefas} foi removida com sucesso')
 
 
 def display():
