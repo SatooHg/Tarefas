@@ -21,26 +21,19 @@ def add():
 
 def undo():
     print(' ')
-    numero_da_tarefa = int(input('Qual tarefa deseja Remover '))
-    for tarefa in lista_de_tarefas:
-        if tarefa[0] == numero_da_tarefa:
-            lista_de_tarefas.remove(tarefa)
-            print(' ')
-            print(f'A tarefa {tarefa} foi removida com sucesso')
-        else:
-            print(' ')
-            print('nenhuma tarefa encotrada')
+    if not lista_de_tarefas:
 
 
 def display():
     if not lista_de_tarefas:
         print(' ')
         print('a lista esta vazia')
+        print(' ')
     else:
         print(' ')
         print('Lista de Tarefas')
-        for idx, tarefa in enumerate(lista_de_tarefas, start=1):
-            print(f'{idx}. {tarefa}')
+        for numero, tarefa in enumerate(lista_de_tarefas, start=1):
+            print(f'{numero}. {tarefa}')
 
 
 while True:
