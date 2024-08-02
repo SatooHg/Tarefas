@@ -1,5 +1,9 @@
-lista_de_tarefas = []
-
+try:
+    arquivo = open('Test.txt', 'r')
+    lista_de_tarefas = arquivo.read().splitlines()
+    arquivo.close()
+except FileNotFoundError:
+    lista_de_tarefas = []
 
 def menu():
     print('------------------------')
@@ -12,11 +16,14 @@ def menu():
 
 def add():
     print(' ')
-    tarefa = input('Insira um novo item ')
-
+    tarefa = input('Insira um novo item: ')
     lista_de_tarefas.append(tarefa)
+    arquivo = open('Test.txt', 'w')
+    for tarefa in lista_de_tarefas:
+        arquivo.write(tarefa + '\n')
+    arquivo.close()
     print(' ')
-    print(f'a tarefa {tarefa} foi inserida com sucesso')
+    print(f'A tarefa "{tarefa}" foi inserida com sucesso.')
 
 
 def undo():
