@@ -40,6 +40,10 @@ def undo():
         return
 
     removedor_de_tarefas = lista_de_tarefas.pop(numero_da_tarefa - 1)
+    arquivo = open('Test.txt','w')
+    for tarefa in lista_de_tarefas:
+        arquivo.write(tarefa + '\n')
+        arquivo.close()
     print(' ')
     print(f'a tarefa {removedor_de_tarefas} foi removida com sucesso')
 
