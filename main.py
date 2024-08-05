@@ -5,6 +5,7 @@ try:
 except FileNotFoundError:
     lista_de_tarefas = []
 
+
 def menu():
     print('------------------------')
     print('Menu:')
@@ -66,6 +67,7 @@ while True:
     elif op == '3':
         display()
     elif op == '4':
+        print('Salvando...')
         print('Saindo...')
         break
     else:
