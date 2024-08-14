@@ -1,5 +1,5 @@
 try:
-    arquivo = open('Test.txt', 'r')
+    arquivo = open('Test.json', 'r')
     lista_de_tarefas = arquivo.read().splitlines()
     arquivo.close()
 except FileNotFoundError:
@@ -19,7 +19,7 @@ def add():
     print(' ')
     tarefa = input('Insira um novo item: ')
     lista_de_tarefas.append(tarefa)
-    arquivo = open('Test.txt', 'w')
+    arquivo = open('Test.json', 'w')
     for tarefa in lista_de_tarefas:
         arquivo.write(tarefa + '\n')
     arquivo.close()
@@ -40,7 +40,7 @@ def undo():
         return
 
     removedor_de_tarefas = lista_de_tarefas.pop(numero_da_tarefa - 1)
-    arquivo = open('Test.txt','w')
+    arquivo = open('Test.json','w')
     for tarefa in lista_de_tarefas:
         arquivo.write(tarefa + '\n')
         arquivo.close()
